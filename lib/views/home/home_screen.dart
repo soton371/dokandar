@@ -1,5 +1,5 @@
 import 'package:dokandar/configs/app_colors.dart';
-import 'package:dokandar/views/home/service_list.dart';
+import 'package:dokandar/views/home/stores/store_list.dart';
 import 'package:dokandar/widgets/app_grid_item.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ///start hero tag section
             RichText(
                 text: const TextSpan(
                   text: '\n   We Deliver',
@@ -45,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ]
                 )
             ),
+            ///end hero tag section
 
             GridView(
               shrinkWrap: true,

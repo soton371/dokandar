@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dokandar/configs/app_colors.dart';
 import 'package:dokandar/views/home/category/category.dart';
 import 'package:dokandar/widgets/app_appbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -32,9 +34,13 @@ class ServiceListScreen extends StatelessWidget {
                 itemBuilder: (_,i)=>Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   child: ListTile(
-                    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>CategoryScreen())),
+                    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>const CategoryScreen())),
                     contentPadding: const EdgeInsets.all(8),
-                    leading: Image.network('https://picsum.photos/100'),
+                    leading: CachedNetworkImage(
+                      imageUrl: "https://picsum.photos/100",
+                      placeholder: (context, url) => const CupertinoActivityIndicator(),
+                      errorWidget: (context, url, error) => const Icon(Iconsax.image),
+                    ),
                     title: Text('$title Name'),
                     subtitle: Column(
                       children: [
