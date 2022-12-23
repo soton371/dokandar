@@ -1,4 +1,5 @@
 import 'package:dokandar/configs/app_colors.dart';
+import 'package:dokandar/views/account/wallet/wallet_scr.dart';
 import 'package:dokandar/widgets/app_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -40,9 +41,12 @@ class AccountScreen extends StatelessWidget {
               iconData: Iconsax.location5,
               title: 'Saved Addresses'
             ),
-            appListTile(
-              iconData: Iconsax.wallet5,
-              title: 'Wallet'
+            InkWell(
+              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>const WalletScreen())),
+              child: appListTile(
+                iconData: Iconsax.wallet5,
+                title: 'Wallet'
+              ),
             ),
             appListTile(
               iconData: Iconsax.gift5,
